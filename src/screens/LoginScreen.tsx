@@ -6,7 +6,7 @@ import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import TextButton from '../components/TextButton/TextButton';
 
-const Login = () => {
+const Login = ({navigation}: any) => {
   return (
     <SafeAreaView>
       <ScrollView>
@@ -30,9 +30,13 @@ const Login = () => {
           </View>
           <Button
             text={'Giriş Yap'}
-            //onPress={handleSubmit}
+            onPress={() => navigation.navigate('TabPage')}
           />
-          <TextButton text="Henüz hesabın yok mu?" buttonText="Kayıt Ol" />
+          <TextButton
+            onPress={() => navigation.navigate('SignPage')}
+            text="Henüz hesabın yok mu?"
+            buttonText="Kayıt Ol"
+          />
         </>
       </ScrollView>
     </SafeAreaView>

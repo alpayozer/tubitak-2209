@@ -1,0 +1,41 @@
+[
+    {
+        "id":0,
+        "name":"Alpay",
+        "surname":"Özer",
+        "age":22,
+        "height":180,
+        "weight":55,
+        "about":"Alpay hakkında bilgi",
+        "image" : "https://picsum.photos/200/300",
+        "identification number": "12345678910",
+        "email": "alpayozer@gmail.com",
+        "password":"alpaysifre"
+    },
+    {
+        "id":1,
+        "name":"Pınar",
+        "surname":"İnemek",
+        "age":22,
+        "height":180,
+        "weight":55,
+        "about":"Pınar hakkında bilgi",
+        "image" : "https://picsum.photos/200/300",
+        "identification number": "12345678910",
+        "email": "pınarinemek@gmail.com",
+        "password":"pinarsifre"
+    },
+    {
+        "id":2,
+        "name":"Eren",
+        "surname":"Dile",
+        "age":22,
+        "height":180,
+        "weight":55,
+        "about":"Eren hakkında bilgi",
+        "image" : "https://picsum.photos/200/300",
+        "identification number": "12345678910",
+        "email": "erendile@gmail.com",
+        "password":"erensifre"
+    }
+]
