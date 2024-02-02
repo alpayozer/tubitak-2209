@@ -4,8 +4,10 @@
         "name":"Alpay",
         "surname":"Özer",
         "hospital":"Çorlu Devlet Hastanesi",
-        "about":"Alpay hakkında bilgi",
-        "image" : "https://picsum.photos/200/300"
+        "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio",
+        "image" : "https://picsum.photos/200/300",
+
+        "_comment" : "Doktor için bir takvim de yollanacak"
     },
     {
         "id":1,

@@ -1,10 +1,9 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AppointmentStack from './AppointmentStack';
 import ProfileStack from './ProfileStack';
+import DoctorStack from './DoctorStack';
 import Home from '../screens/HomeScreen';
-import Doctors from '../screens/Doctors';
 import Prescriptions from '../screens/PrescriptionScrenn';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -36,7 +35,7 @@ const TabNavigator = () => {
       <Tab.Screen
         options={{tabBarIcon: doctorIcon}}
         name="Doctors"
-        component={Doctors}
+        component={DoctorStack}
       />
       <Tab.Screen
         options={{tabBarIcon: appointmentIcon}}

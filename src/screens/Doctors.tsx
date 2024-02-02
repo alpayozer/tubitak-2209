@@ -4,7 +4,7 @@ import styles from '../css/Doctors.style';
 import data from '../assets/data/doctor.json';
 import DoctorCard from '../components/DoctorCard/DoctorCard';
 
-const Doctors = () => {
+const Doctors = ({navigation}: any) => {
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -30,6 +30,9 @@ const Doctors = () => {
           {data.map(doctor => {
             return (
               <DoctorCard
+                onPress={() =>
+                  navigation.navigate('DoctorDetailScreen', doctor)
+                }
                 key={doctor.id}
                 name={doctor.name + ' ' + doctor.surname}
                 hospital={doctor.hospital}
