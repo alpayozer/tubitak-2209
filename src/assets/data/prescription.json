@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "doctor_name":"Ayşe Yıldırım",
+        "doctor_image":"https://picsum.photos/200/300",
+        "doctor_hospital":"Çorlu Devlet Hastanesi",
+        "prescription_date": "12 Eylül",
+        "prescription_hour": "08.30"
+    },
+    {
+        "id":2,
+        "doctor_name":"Pınar İnemek",
+        "doctor_image":"https://picsum.photos/200/300",
+        "doctor_hospital":"Çorlu Devlet Hastanesi",
+        "prescription_date": "13 Eylül",
+        "prescription_hour": "09.30"
+    },
+    {
+        "id":3,
+        "doctor_name":"Alpay Özer",
+        "doctor_image":"https://picsum.photos/200/300",
+        "doctor_hospital":"Çorlu Devlet Hastanesi",
+        "prescription_date": "15 Eylül",
+        "prescription_hour": "10.30"
+    }
+]
