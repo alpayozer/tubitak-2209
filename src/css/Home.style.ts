@@ -38,6 +38,12 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         top: 40,
+    },
+    appointment_list: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        marginTop: 20,
     }
 
 

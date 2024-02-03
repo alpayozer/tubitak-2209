@@ -5,7 +5,8 @@
         "doctor_image":"https://picsum.photos/200/300",
         "doctor_hospital":"Çorlu Devlet Hastanesi",
         "prescription_date": "12 Eylül",
-        "prescription_hour": "08.30"
+        "prescription_hour": "08.30",
+        "disable":false
     },
     {
         "id":2,
@@ -13,7 +14,8 @@
         "doctor_image":"https://picsum.photos/200/300",
         "doctor_hospital":"Çorlu Devlet Hastanesi",
         "prescription_date": "13 Eylül",
-        "prescription_hour": "09.30"
+        "prescription_hour": "09.30",
+        "disable":true
     },
     {
         "id":3,
@@ -21,6 +23,16 @@
         "doctor_image":"https://picsum.photos/200/300",
         "doctor_hospital":"Çorlu Devlet Hastanesi",
         "prescription_date": "15 Eylül",
-        "prescription_hour": "10.30"
+        "prescription_hour": "10.30",
+        "disable":true
+    },
+    {
+        "id":4,
+        "doctor_name":"Eren Dile",
+        "doctor_image":"https://picsum.photos/200/300",
+        "doctor_hospital":"Çorlu Devlet Hastanesi",
+        "prescription_date": "20 Eylül",
+        "prescription_hour": "18.30",
+        "disable":false
     }
 ]
