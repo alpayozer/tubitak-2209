@@ -9,11 +9,11 @@ export default StyleSheet.create({
         backgroundColor: "#72BAF5",
         height: 100,
         borderBottomLeftRadius: 40,
-        borderBottomRightRadius: 40
+        borderBottomRightRadius: 40,
     },
     headerText: {
         color: "white",
-        margin: 15
+        margin: 15,
     },
     image: {
         width: 37,

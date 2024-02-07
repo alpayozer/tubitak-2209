@@ -4,7 +4,7 @@ import styles from '../css/Prescription.style';
 import PrescriptionButton from '../components/PrescriptionButton/PrescriptionButton';
 import PrescriptionBox from '../components/PrescriptionBox/PrescriptionBox';
 
-const PrescriptionScreen = () => {
+const PrescriptionScreen = ({navigation}: any) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -24,7 +24,9 @@ const PrescriptionScreen = () => {
           <PrescriptionButton text="Geçmiş Reçeteler" />
         </View>
         <View style={styles.list_view}>
-          <PrescriptionBox />
+          <PrescriptionBox
+            onPress={() => navigation.navigate('PrescriptionDetailScreen')}
+          />
           <PrescriptionBox />
           <PrescriptionBox />
           <PrescriptionBox />

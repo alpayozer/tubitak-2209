@@ -17,11 +17,21 @@ const HomeScreen = () => {
           <Image style={styles.image} source={{uri: user.image}} />
         </View>
       </View>
-      <View>
-        <Text>Takvim</Text>
+      <View style={styles.calendar_box}>
+        <Image
+          source={require('../assets/images/calendar.png')}
+          style={styles.icon}
+        />
+        <Text style={styles.title}>Takvim</Text>
       </View>
       <View>
-        <Text>Randevularım</Text>
+        <View style={styles.appointment_box}>
+          <Image
+            source={require('../assets/images/appointment.png')}
+            style={styles.icon}
+          />
+          <Text style={styles.title}>Randevularım</Text>
+        </View>
         <View style={styles.appointment_list}>
           {prescriptionData.map(item => (
             <HomeAppointmentBox

@@ -3,7 +3,7 @@ import {Text, View, ScrollView, Image} from 'react-native';
 import styles from '../../css/PrescriptionBox.style';
 import PrescriptionButton from '../PrescriptionButton/PrescriptionButton';
 
-const PrescriptionBox = () => {
+const PrescriptionBox = ({onPress}: any) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -17,7 +17,7 @@ const PrescriptionBox = () => {
           <Text style={styles.text_date}>Veriliş Tarihi : 29.09.2022</Text>
         </View>
         <View style={styles.button_container}>
-          <PrescriptionButton text="Reçete Detay" />
+          <PrescriptionButton onPress={onPress} text="Reçete Detay" />
         </View>
       </View>
     </ScrollView>

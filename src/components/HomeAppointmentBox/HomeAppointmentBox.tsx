@@ -25,6 +25,7 @@ const HomeAppointmentBox = ({
       </View>
       <View>
         <TouchableOpacity
+          disabled={disable}
           style={[
             styles.button_container,
             disable && {backgroundColor: '#F1F1F1'},

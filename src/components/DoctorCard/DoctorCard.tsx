@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../../css/DoctorCard.style';
+import Button from '../Button/Button';
+
 const DoctorCard = ({name, hospital, onPress, image}: any) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
@@ -9,7 +11,6 @@ const DoctorCard = ({name, hospital, onPress, image}: any) => {
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.hospital}>{hospital}</Text>
       </View>
-      {/* <Button onPress={onPress} text='Randevu al' screen='randevu_al'></Button> */}
     </TouchableOpacity>
   );
 };

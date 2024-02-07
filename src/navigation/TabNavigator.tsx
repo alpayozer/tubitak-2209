@@ -1,28 +1,33 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import AppointmentStack from './AppointmentStack';
-import ProfileStack from './ProfileStack';
-import DoctorStack from './DoctorStack';
-import Home from '../screens/HomeScreen';
-import Prescriptions from '../screens/PrescriptionScrenn';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import Home from '../screens/HomeScreen';
+
+//stacks
+import AppointmentStack from './AppointmentStack';
+import DoctorStack from './DoctorStack';
+import PrescriptionStack from './PrescriptionStack';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   const size = 30;
 
-  const homeIcon = ({color}) => <Icon name="home" size={size} color={color} />;
-  const appointmentIcon = ({color}) => (
+  const homeIcon = ({color}: {color: string}) => (
+    <Icon name="home" size={size} color={color} />
+  );
+  const appointmentIcon = ({color}: {color: string}) => (
     <Icon name="stethoscope" size={size} color={color} />
   );
-  const profileIcon = ({color}) => (
+  const profileIcon = ({color}: {color: string}) => (
     <Icon name="eye-outline" size={size} color={color} />
   );
-  const prescriptionsIcon = ({color}) => (
+  const prescriptionsIcon = ({color}: {color: string}) => (
     <Icon name="clipboard-pulse-outline" size={size} color={color} />
   );
-  const doctorIcon = ({color}) => (
+  const doctorIcon = ({color}: {color: string}) => (
     <Icon name="account-multiple-outline" size={size} color={color} />
   );
   return (
@@ -45,7 +50,7 @@ const TabNavigator = () => {
       <Tab.Screen
         options={{tabBarIcon: prescriptionsIcon}}
         name="Prescriptions"
-        component={Prescriptions}
+        component={PrescriptionStack}
       />
       <Tab.Screen
         options={{tabBarIcon: profileIcon}}

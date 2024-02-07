@@ -7,6 +7,28 @@ export default StyleSheet.create({
         flex: 1
 
     },
+    icon: {
+        width: 15,
+        height: 15,
+    },
+    title: {
+        fontSize: 15,
+        color: "black",
+        marginLeft: 10,
+        fontWeight: "600"
+    },
+    appointment_box: {
+        flexDirection: "row",
+        alignItems: "center",
+        margin: 20,
+    },
+    calendar_box: {
+        flexDirection: "row",
+        alignItems: "center",
+        margin: 20,
+        marginTop: 60,
+        marginBottom: 140
+    },
     welcome: {
         fontSize: 15,
         color: "#0F6BE9",

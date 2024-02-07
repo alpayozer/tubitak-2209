@@ -10,7 +10,7 @@ import DoctorDetail from '../screens/DoctorDetail';
 
 const DoctorStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="DoctorsScreen" component={Doctors} />
       <Stack.Screen name="DoctorDetailScreen" component={DoctorDetail} />
     </Stack.Navigator>

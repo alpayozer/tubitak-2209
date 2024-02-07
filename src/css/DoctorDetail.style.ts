@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex: 1
     },
     name_container: {
-        alignItems: "center"
+        alignItems: "center",
     },
     name: {
         fontSize: 18,
