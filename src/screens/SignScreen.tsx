@@ -20,19 +20,20 @@ const SignScreen = ({navigation}: any) => {
 
   async function handleFormSubmit(formValues: any) {
     console.log(formValues);
-    const formData = new FormData();
-    formData.append('name', formValues.name);
-    formData.append('surname', formValues.surname);
-    formData.append('email', formValues.email);
-    formData.append('password', formValues.password);
+
     try {
-      await fetch('http://localhost:8080/auth/signup', {
+      await fetch('https://3912-31-7-38-253.ngrok-free.app/auth/signup', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
-        body: formData,
+        body: JSON.stringify({
+          name: formValues.name,
+          surname: formValues.surname,
+          email: formValues.email,
+          password: formValues.password,
+        }),
       })
         .then(response => response.json())
         .then(json => {
