@@ -4,8 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 //screens
-import Prescription from '../screens/PrescriptionScrenn';
-import PrescriptionDetail from '../screens/PrescriptionDetail';
+import Prescription from '../../screens/UserScreen/PrescriptionScrenn';
+import PrescriptionDetail from '../../screens/UserScreen/PrescriptionDetail';
 
 const PrescriptionStack = () => {
   return (

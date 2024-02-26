@@ -1,7 +1,7 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import styles from '../css/AppointmentThird.style';
-import AppointmentCard from '../components/AppointmentCard/AppointmentCard';
+import styles from '../../css/AppointmentThird.style';
+import AppointmentCard from '../../components/AppointmentCard/AppointmentCard';
 
 const AppointmentThird = ({route}: any) => {
   const appointmentData: any = route.params;
@@ -16,7 +16,7 @@ const AppointmentThird = ({route}: any) => {
         </Text>
         <Image
           style={styles.image}
-          source={require('../assets/images/monster3.png')}
+          source={require('../../assets/images/monster3.png')}
         />
       </View>
       <View style={styles.card}>

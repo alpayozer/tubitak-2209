@@ -1,8 +1,8 @@
 import React from 'react';
 import {Image, ScrollView, Text, View} from 'react-native';
-import styles from '../css/Doctors.style';
-import data from '../assets/data/doctor.json';
-import DoctorCard from '../components/DoctorCard/DoctorCard';
+import styles from '../../css/Doctors.style';
+import data from '../../assets/data/doctor.json';
+import DoctorCard from '../../components/DoctorCard/DoctorCard';
 
 const Doctors = ({navigation}: any) => {
   return (
@@ -11,7 +11,7 @@ const Doctors = ({navigation}: any) => {
         <View style={styles.header_card}>
           <Image
             style={styles.icon}
-            source={require('../assets/images/monster2.png')}
+            source={require('../../assets/images/monster2.png')}
           />
           <Text style={styles.header_card_title}>
             Lorem ipsum dolor sit amet,

@@ -1,6 +1,6 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import styles from '../css/DoctorDetail.style';
+import styles from '../../css/DoctorDetail.style';
 
 const DoctorDetail = ({route}: any) => {
   const doctorData = route.params;
@@ -21,7 +21,7 @@ const DoctorDetail = ({route}: any) => {
         <Text style={styles.about}>{doctorData.about}</Text>
         <Image
           style={styles.monster}
-          source={require('../assets/images/monster5.png')}
+          source={require('../../assets/images/monster5.png')}
         />
       </View>
     </View>

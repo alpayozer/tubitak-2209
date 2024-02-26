@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
-import userData from '../assets/data/user.json';
-import styles from '../css/Home.style';
-import HomeAppointmentBox from '../components/HomeAppointmentBox/HomeAppointmentBox';
-import prescriptionData from '../assets/data/appointment.json';
+import userData from '../../assets/data/user.json';
+import styles from '../../css/Home.style';
+import HomeAppointmentBox from '../../components/HomeAppointmentBox/HomeAppointmentBox';
+import prescriptionData from '../../assets/data/appointment.json';
 
 const HomeScreen = () => {
   const user = userData[0];
@@ -19,7 +19,7 @@ const HomeScreen = () => {
       </View>
       <View style={styles.calendar_box}>
         <Image
-          source={require('../assets/images/calendar.png')}
+          source={require('../../assets/images/calendar.png')}
           style={styles.icon}
         />
         <Text style={styles.title}>Takvim</Text>
@@ -27,7 +27,7 @@ const HomeScreen = () => {
       <View>
         <View style={styles.appointment_box}>
           <Image
-            source={require('../assets/images/appointment.png')}
+            source={require('../../assets/images/appointment.png')}
             style={styles.icon}
           />
           <Text style={styles.title}>Randevularım</Text>

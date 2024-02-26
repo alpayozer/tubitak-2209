@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Alert} from 'react-native';
 import {Formik} from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import styles from '../css/ProfileEdit.style';
+import styles from '../../css/ProfileEdit.style';
 
 //components
-import Input from '../components/Input/Input';
-import Button from '../components/Button/Button';
-import ProfileEditImage from '../components/ProfilEditImage/ProfilEditImage';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
+import ProfileEditImage from '../../components/ProfilEditImage/ProfilEditImage';
 
 const ProfieEdit = ({navigation}: any) => {
   const initialFormValues = {

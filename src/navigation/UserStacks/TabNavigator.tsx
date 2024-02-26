@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Home from '../screens/HomeScreen';
+import Home from '../../screens/UserScreen/HomeScreen';
 
 //stacks
 import AppointmentStack from './AppointmentStack';
@@ -30,8 +30,9 @@ const TabNavigator = () => {
   const doctorIcon = ({color}: {color: string}) => (
     <Icon name="account-multiple-outline" size={size} color={color} />
   );
+
   return (
-    <Tab.Navigator screenOptions={{tabBarShowLabel: false, headerShown: false}}>
+    <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen
         options={{tabBarIcon: homeIcon}}
         name="Home"
@@ -53,7 +54,9 @@ const TabNavigator = () => {
         component={PrescriptionStack}
       />
       <Tab.Screen
-        options={{tabBarIcon: profileIcon}}
+        options={{
+          tabBarIcon: profileIcon,
+        }}
         name="Profile"
         component={ProfileStack}
       />

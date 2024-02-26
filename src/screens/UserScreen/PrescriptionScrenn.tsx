@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, View, ScrollView, Image} from 'react-native';
-import styles from '../css/Prescription.style';
-import PrescriptionButton from '../components/PrescriptionButton/PrescriptionButton';
-import PrescriptionBox from '../components/PrescriptionBox/PrescriptionBox';
+import styles from '../../css/Prescription.style';
+import PrescriptionButton from '../../components/PrescriptionButton/PrescriptionButton';
+import PrescriptionBox from '../../components/PrescriptionBox/PrescriptionBox';
 
 const PrescriptionScreen = ({navigation}: any) => {
   return (
@@ -10,7 +10,7 @@ const PrescriptionScreen = ({navigation}: any) => {
       <View style={styles.container}>
         <Image
           style={styles.image}
-          source={require('../assets/images/monster4.png')}
+          source={require('../../assets/images/monster4.png')}
         />
         <View style={styles.inner_container}>
           <Text style={styles.title}>Lorem ipsum dolor sit amet,</Text>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View, TouchableOpacity, Image, ScrollView} from 'react-native';
-import InfoCard from '../components/InfoCard/InfoCard';
-import ExercisesCard from '../components/ExercisesCard/ExercisesCard';
-import styles from '../css/Profile.style';
-import userData from '../assets/data/user.json';
-import ProfileImage from '../components/ProfileImage/ProfileImage';
+import InfoCard from '../../components/InfoCard/InfoCard';
+import ExercisesCard from '../../components/ExercisesCard/ExercisesCard';
+import styles from '../../css/Profile.style';
+import userData from '../../assets/data/user.json';
+import ProfileImage from '../../components/ProfileImage/ProfileImage';
 
 const Profile = ({navigation}: any) => {
   const user = userData[0];
@@ -18,7 +18,7 @@ const Profile = ({navigation}: any) => {
             onPress={() => navigation.navigate('ProfileEditScreen')}>
             <Image
               style={styles.text_icon}
-              source={require('../assets/images/monster.png')}
+              source={require('../../assets/images/monster.png')}
             />
             <Text style={styles.text}>Profili düzenle</Text>
           </TouchableOpacity>
@@ -31,7 +31,7 @@ const Profile = ({navigation}: any) => {
         <View style={styles.daily_exercises}>
           <Image
             style={styles.daily_icon}
-            source={require('../assets/images/morning-routine.png')}
+            source={require('../../assets/images/morning-routine.png')}
           />
           <Text style={styles.exercisesCard_text}>Daily Exercises</Text>
         </View>

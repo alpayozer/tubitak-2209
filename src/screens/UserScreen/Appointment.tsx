@@ -1,7 +1,7 @@
 import {ScrollView, View, Image, Text} from 'react-native';
 import React from 'react';
-import Button from '../components/Button/Button';
-import styles from '../css/Appointment.style';
+import Button from '../../components/Button/Button';
+import styles from '../../css/Appointment.style';
 
 const Appointment = ({navigation}: any) => {
   function goToSecond() {
@@ -13,7 +13,7 @@ const Appointment = ({navigation}: any) => {
         <View>
           <Image
             style={styles.image}
-            source={require('../assets/images/randevu_header.png')}
+            source={require('../../assets/images/randevu_header.png')}
           />
           <Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
@@ -21,7 +21,7 @@ const Appointment = ({navigation}: any) => {
           </Text>
           <Image
             style={styles.icon}
-            source={require('../assets/images/monster3.png')}
+            source={require('../../assets/images/monster3.png')}
           />
         </View>
         <View style={styles.dropdown}>

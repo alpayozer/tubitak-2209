@@ -5,8 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 //screens
-import Doctors from '../screens/Doctors';
-import DoctorDetail from '../screens/DoctorDetail';
+import Doctors from '../../screens/UserScreen/Doctors';
+import DoctorDetail from '../../screens/UserScreen/DoctorDetail';
 
 const DoctorStack = () => {
   return (

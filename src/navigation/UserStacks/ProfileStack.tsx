@@ -3,8 +3,8 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 //screens
-import Profile from '../screens/Profile';
-import ProfileEdit from '../screens/ProfileEdit';
+import Profile from '../../screens/UserScreen/Profile';
+import ProfileEdit from '../../screens/UserScreen/ProfileEdit';
 
 const Stack = createNativeStackNavigator();
 

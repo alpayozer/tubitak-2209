@@ -2,9 +2,9 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 //screens
-import Appointment from '../screens/Appointment';
-import AppointmentSecond from '../screens/AppointmentSecond';
-import AppointmentThird from '../screens/AppointmentThird';
+import Appointment from '../../screens/UserScreen/Appointment';
+import AppointmentSecond from '../../screens/UserScreen/AppointmentSecond';
+import AppointmentThird from '../../screens/UserScreen/AppointmentThird';
 
 const Stack = createNativeStackNavigator();
 

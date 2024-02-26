@@ -1,7 +1,7 @@
 import {View, Text, Image, FlatList} from 'react-native';
 import React from 'react';
-import AppointmentCard from '../components/AppointmentCard/AppointmentCard';
-import styles from '../css/AppointmentSecond.style';
+import AppointmentCard from '../../components/AppointmentCard/AppointmentCard';
+import styles from '../../css/AppointmentSecond.style';
 
 const data = [
   {
@@ -31,7 +31,7 @@ const AppointmentSecond = ({navigation}: any) => {
         </Text>
         <Image
           style={styles.image}
-          source={require('../assets/images/monster3.png')}
+          source={require('../../assets/images/monster3.png')}
         />
       </View>
       <View style={styles.card}>
