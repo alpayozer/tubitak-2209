@@ -8,7 +8,11 @@ import styles from '../css/Sign.style';
 import Input from '../components/Input/Input';
 import TextButton from '../components/TextButton/TextButton';
 import Button from '../components/Button/Button';
+import {signup} from '../auth/api/signup';
+import {useAuth} from '../lib/hooks/useAuth';
 const SignScreen = ({navigation}: any) => {
+  const {setAuthenticatedUser} = useAuth();
+
   const initialFormValues = {
     name: '',
     surname: '',
@@ -22,26 +26,8 @@ const SignScreen = ({navigation}: any) => {
     console.log(formValues);
 
     try {
-      await fetch('https://3912-31-7-38-253.ngrok-free.app/auth/signup', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formValues.name,
-          surname: formValues.surname,
-          email: formValues.email,
-          password: formValues.password,
-        }),
-      })
-        .then(response => response.json())
-        .then(json => {
-          console.log(json);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      const data = await signup(formValues);
+      setAuthenticatedUser(data.user);
       navigation.navigate('LoginPage');
     } catch (error) {
       console.log(error);
