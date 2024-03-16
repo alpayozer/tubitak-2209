@@ -25,7 +25,7 @@ http.interceptors.response.use(
             originalRequest._retry = true;
             try {
                 const { tokens } = await refresh();
-                error.response.config.headers.Authorization = `Bearer ${tokens.accessToken}`;
+                error.response.config.headers.Authorization = `Bearer ${tokens.access_token}`;
                 return http(error.response.config);
             } catch (error) {
                 // window.location.href = '/login';

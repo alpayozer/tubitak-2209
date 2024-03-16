@@ -19,4 +19,9 @@ export default StyleSheet.create({
         top: 20,
         left: 5,
     },
+    input_group: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+    }
+
 })

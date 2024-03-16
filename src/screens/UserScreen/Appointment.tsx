@@ -2,6 +2,7 @@ import {ScrollView, View, Image, Text} from 'react-native';
 import React from 'react';
 import Button from '../../components/Button/Button';
 import styles from '../../css/Appointment.style';
+import DropdownComponent from '../../components/Dropdown/Dropdown';
 
 const Appointment = ({navigation}: any) => {
   function goToSecond() {
@@ -24,6 +25,8 @@ const Appointment = ({navigation}: any) => {
             source={require('../../assets/images/monster3.png')}
           />
         </View>
+        <DropdownComponent />
+
         <View style={styles.dropdown}>
           <Text>İl</Text>
           <Text>İlçe</Text>

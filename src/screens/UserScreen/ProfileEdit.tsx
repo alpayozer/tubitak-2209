@@ -16,6 +16,9 @@ const ProfieEdit = ({navigation}: any) => {
     identificationNumber: '',
     email: '',
     password: '',
+    age: '',
+    height: '',
+    weight: '',
   };
 
   async function signOut() {
@@ -97,6 +100,24 @@ const ProfieEdit = ({navigation}: any) => {
                 value={values.password}
                 placeholder="password"
               />
+              <View style={styles.input_group}>
+                <Input
+                  onType={handleChange('age')}
+                  value={values.age}
+                  placeholder="age"
+                />
+                <Input
+                  onType={handleChange('height')}
+                  value={values.height}
+                  placeholder="height"
+                />
+                <Input
+                  onType={handleChange('weight')}
+                  value={values.weight}
+                  placeholder="weight"
+                />
+              </View>
+
               <Button onPress={handleSubmit} text="Save" />
             </View>
           </>

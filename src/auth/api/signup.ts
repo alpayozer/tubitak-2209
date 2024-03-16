@@ -4,6 +4,6 @@ import { SignupRequest } from "../../models/User/signupRequest";
 
 export async function signup(signupRequest: SignupRequest): Promise<LoginResponse> {
     const data = (await authHttp.post<LoginResponse>('/auth/signup', signupRequest)).data;
-    http.defaults.headers.Authorization = `Bearer ${data.tokens.accessToken}`
+    http.defaults.headers.Authorization = `Bearer ${data.tokens.access_token}`
     return data;
 }

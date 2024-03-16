@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, Text, View} from 'react-native';
 import userData from '../../assets/data/user.json';
 import styles from '../../css/Home.style';
 import HomeAppointmentBox from '../../components/HomeAppointmentBox/HomeAppointmentBox';
 import prescriptionData from '../../assets/data/appointment.json';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeScreen = () => {
   const user = userData[0];
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const at = await AsyncStorage.getItem('accessToken');
+        setAccessToken(at);
+        console.log(at);
+      } catch (e) {}
+    };
 
+    getData();
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.top_container}>
@@ -23,6 +35,7 @@ const HomeScreen = () => {
           style={styles.icon}
         />
         <Text style={styles.title}>Takvim</Text>
+        <Text>{accessToken}</Text>
       </View>
       <View>
         <View style={styles.appointment_box}>

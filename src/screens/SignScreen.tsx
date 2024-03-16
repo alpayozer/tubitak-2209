@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Image, View, ScrollView} from 'react-native';
 import {Formik} from 'formik';
-import axios from 'axios';
+
 import styles from '../css/Sign.style';
 
 //components
@@ -10,19 +10,20 @@ import TextButton from '../components/TextButton/TextButton';
 import Button from '../components/Button/Button';
 import {signup} from '../auth/api/signup';
 import {useAuth} from '../lib/hooks/useAuth';
+import {SignupRequest} from '../models/User/signupRequest';
+
 const SignScreen = ({navigation}: any) => {
   const {setAuthenticatedUser} = useAuth();
 
   const initialFormValues = {
     name: '',
     surname: '',
-    // identificationNumber: '',
     email: '',
     password: '',
-    // repassword: '',
+    //role gelicek
   };
 
-  async function handleFormSubmit(formValues: any) {
+  async function handleFormSubmit(formValues: SignupRequest) {
     console.log(formValues);
 
     try {
@@ -34,9 +35,6 @@ const SignScreen = ({navigation}: any) => {
     }
   }
 
-  const goToLogin = () => {
-    navigation.navigate('LoginPage');
-  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -58,11 +56,6 @@ const SignScreen = ({navigation}: any) => {
                   placeholder="Surname"
                   onType={handleChange('surname')}
                 />
-                {/* <Input
-                  value={values.identificationNumber}
-                  placeholder="TC identification number"
-                  onType={handleChange('identificationNumber')}
-                /> */}
                 <Input
                   value={values.email}
                   placeholder="Email"
@@ -81,7 +74,7 @@ const SignScreen = ({navigation}: any) => {
         <TextButton
           text="Zaten üye misin ?"
           buttonText="Oturum Aç"
-          onPress={goToLogin}
+          onPress={() => navigation.navigate('LoginPage')}
         />
       </ScrollView>
     </SafeAreaView>
