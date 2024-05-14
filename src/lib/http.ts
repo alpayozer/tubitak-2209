@@ -6,6 +6,10 @@ import { config } from '../config';
 export const http = axios.create({
     baseURL: config.apiUrl,
     withCredentials: true,
+    headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+    }
 });
 
 export const authHttp = axios.create({

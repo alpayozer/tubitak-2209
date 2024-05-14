@@ -1,5 +1,11 @@
-import React, {useCallback, useMemo, useState} from 'react';
-import {View, Text} from 'react-native';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import {View, Text, Button} from 'react-native';
 import {
   Calendar,
   CalendarList,
@@ -10,6 +16,8 @@ import {
   AgendaEntry,
   AgendaSchedule,
 } from 'react-native-calendars';
+import {AuthContext} from '../../contexts/AuthContext';
+import {getAllDoctor} from '../../doctor/api/getAll';
 const RANGE = 24;
 const initialDate = '2024-03-25';
 const nextWeekDate = '2024-04-01';
@@ -20,11 +28,26 @@ interface State {
 const Home = () => {
   const [selected, setSelected] = useState('');
   const horizontalView = true;
+  const authContext = useContext(AuthContext);
+  const doctors = async () => {
+    const data = await getAllDoctor();
+    console.log(data, 'data');
+  };
+
+  useEffect(() => {
+    doctors();
+  }, []);
 
   return (
     <View>
       <Text>Doctor Home</Text>
-      <Calendar
+      <Button
+        title="Çıkış yap"
+        onPress={async () => {
+          await authContext.logout();
+          console.log('Evet');
+        }}></Button>
+      {/* <Calendar
         onDayPress={day => {
           setSelected(day.dateString);
         }}
@@ -49,7 +72,7 @@ const Home = () => {
         staticHeader={horizontalView}
         minDate="2024-03-25"
         maxDate="2024-04-01"
-      />
+      /> */}
       {/* <Agenda
         items={this.state.items}
         loadItemsForMonth={this.loadItems}

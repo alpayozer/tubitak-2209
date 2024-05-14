@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Alert} from 'react-native';
 import {Formik} from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,8 +8,9 @@ import styles from '../../css/ProfileEdit.style';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import ProfileEditImage from '../../components/ProfilEditImage/ProfilEditImage';
+import {AuthContext} from '../../contexts/AuthContext';
 
-const ProfieEdit = ({navigation}: any) => {
+const ProfieEdit = ({navigation}) => {
   const initialFormValues = {
     name: 'deneme',
     surname: '',
@@ -20,6 +21,7 @@ const ProfieEdit = ({navigation}: any) => {
     height: '',
     weight: '',
   };
+  const authContext = useContext(AuthContext);
 
   async function signOut() {
     try {
@@ -31,8 +33,9 @@ const ProfieEdit = ({navigation}: any) => {
         {
           text: 'Evet',
           onPress: async () => {
+            await authContext.logout();
             console.log('Evet');
-            navigation.navigate('LoginPage');
+            // navigation.navigate('LoginPage');
           },
         },
       ]);
@@ -41,7 +44,7 @@ const ProfieEdit = ({navigation}: any) => {
     }
   }
 
-  async function handleFormSave(formValues: any) {
+  async function handleFormSave(formValues) {
     try {
       console.log(formValues);
     } catch (e) {

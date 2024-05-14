@@ -1,73 +1,68 @@
-import {
-  createContext,
+//AuthContext.js
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useRoute} from '@react-navigation/native';
+import React, {
   Dispatch,
   ReactNode,
   SetStateAction,
-  useEffect,
+  createContext,
   useState,
 } from 'react';
 
-import {User} from '../models/User/user';
-import {refresh} from '../lib/auth';
-import {http} from '../lib/http';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-interface AuthContextValue {
-  authenticatedUser: User | null;
-  setAuthenticatedUser: Dispatch<SetStateAction<User | null>>;
+const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
+// const {Provider} = AuthContext;
+interface AuthStateProps {
+  access_token: String | null;
+  refresh_token: String | null;
+  authenticated: Boolean | null;
 }
 
-interface AuthProviderProps {
-  children: ReactNode;
+interface AuthContextProps {
+  authState: AuthStateProps;
+  getAccessToken: () => String | null;
+  setAuthState: Dispatch<SetStateAction<AuthStateProps>>;
+  logout: () => void;
+  authenticatedUser: () => Boolean | null;
 }
 
-export const AuthContext = createContext<AuthContextValue>(
-  {} as AuthContextValue,
-);
+const AuthProvider = ({children}: any) => {
+  const [authState, setAuthState] = useState<AuthStateProps>({
+    access_token: null,
+    refresh_token: null,
+    authenticated: null,
+  });
 
-export function AuthProvider({children}: AuthProviderProps) {
-  const [loaded, setLoaded] = useState(false);
-  const [authenticatedUser, setAuthenticatedUser] = useState<User | null>(null);
-  const [accessToken, setAccessToken] = useState<string | null>(null);
-
-  const getData = async () => {
-    try {
-      const at = await AsyncStorage.getItem('accessToken');
-      const user = JSON.parse((await AsyncStorage.getItem('user')) || '');
-      if (at !== null) {
-        setAuthenticatedUser(user);
-        setAccessToken(at);
-        console.log(accessToken);
-        console.log(user);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+  const logout = async () => {
+    // await Keychain.resetGenericPassword();
+    await AsyncStorage.removeItem('token');
+    await AsyncStorage.removeItem('username');
+    setAuthState({
+      access_token: null,
+      refresh_token: null,
+      authenticated: false,
+    });
   };
 
-  async function refreshAuth() {
-    try {
-      const data = await refresh();
-      setAuthenticatedUser(data.user);
+  const getAccessToken = () => {
+    return authState.access_token;
+  };
 
-      http.defaults.headers.Authorization = `Bearer ${data.tokens.refresh_token}`;
-    } catch (error) {
-    } finally {
-      setLoaded(true);
-    }
-  }
-
-  useEffect(() => {
-    getData();
-    if (!authenticatedUser) {
-      refreshAuth();
-    }
-  }, []);
-
-  if (!loaded) return null;
+  const authenticatedUser = () => {
+    return authState.authenticated;
+  };
 
   return (
-    <AuthContext.Provider value={{authenticatedUser, setAuthenticatedUser}}>
+    <AuthContext.Provider
+      value={{
+        authState,
+        getAccessToken,
+        setAuthState,
+        logout,
+        authenticatedUser,
+      }}>
       {children}
     </AuthContext.Provider>
   );
-}
+};
+
+export {AuthContext, AuthProvider};

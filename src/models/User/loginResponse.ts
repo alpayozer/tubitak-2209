@@ -1,10 +1,10 @@
-import { User } from "./user";
+import { AppUser } from "./appUser";
 
 export interface Tokens {
     access_token: string;
     refresh_token: string;
 }
 export interface LoginResponse {
-    user: User;
+    user: AppUser;
     tokens: Tokens;
 }

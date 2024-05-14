@@ -8,14 +8,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeScreen = () => {
   const user = userData[0];
-  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
   useEffect(() => {
     const getData = async () => {
       try {
-        const at = await AsyncStorage.getItem('accessToken');
-        setAccessToken(at);
-        console.log(at);
-      } catch (e) {}
+        const user = await AsyncStorage.getItem('user');
+
+        // setUsername(username);
+        if (user) {
+          console.log('HOME', JSON.parse(user));
+        }
+      } catch (e) {
+        console.log(e);
+      }
     };
 
     getData();
@@ -23,7 +28,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.top_container}>
-        <Text style={styles.welcome}>Welcome {user.name}</Text>
+        <Text style={styles.welcome}>Welcome {username}</Text>
         <Text style={styles.prescription}>Bugün randevun yok</Text>
         <View style={styles.image_container}>
           <Image style={styles.image} source={{uri: user.image}} />
@@ -35,7 +40,6 @@ const HomeScreen = () => {
           style={styles.icon}
         />
         <Text style={styles.title}>Takvim</Text>
-        <Text>{accessToken}</Text>
       </View>
       <View>
         <View style={styles.appointment_box}>

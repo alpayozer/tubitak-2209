@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, ScrollView, Text, View} from 'react-native';
 import styles from '../../css/Doctors.style';
 import data from '../../assets/data/doctor.json';
 import DoctorCard from '../../components/DoctorCard/DoctorCard';
+import {getAllDoctor} from '../../doctor/api/getAll';
+import {PaginationDto} from '../../shared/pagination/pagination.dto';
+import {Doctor} from '../../models/User/doctor';
 
 const Doctors = ({navigation}: any) => {
+  const [data, setData] = useState<PaginationDto<Doctor>>();
+  const doctors = async () => {
+    const doctor = await getAllDoctor();
+    setData(doctor);
+    // console.log(data.items[0].user, 'data');
+    console.log(data, 'dataaaaaaaaaa');
+  };
+
+  useEffect(() => {
+    doctors();
+  }, []);
+
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -27,7 +42,7 @@ const Doctors = ({navigation}: any) => {
           <Text>Hastane</Text>
         </View>
         <View style={styles.doctorCard}>
-          {data.map(doctor => {
+          {/* {data.items.map(doctor => {
             return (
               <DoctorCard
                 onPress={() =>
@@ -39,7 +54,8 @@ const Doctors = ({navigation}: any) => {
                 image={doctor.image}
               />
             );
-          })}
+          })} */}
+          {data ? <Text>datavar</Text> : <Text>Yükleniyor</Text>}
         </View>
       </View>
     </ScrollView>

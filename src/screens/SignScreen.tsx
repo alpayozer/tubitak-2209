@@ -13,13 +13,12 @@ import {useAuth} from '../lib/hooks/useAuth';
 import {SignupRequest} from '../models/User/signupRequest';
 
 const SignScreen = ({navigation}: any) => {
-  const {setAuthenticatedUser} = useAuth();
-
   const initialFormValues = {
     name: '',
     surname: '',
     email: '',
     password: '',
+    role: '',
     //role gelicek
   };
 
@@ -28,7 +27,7 @@ const SignScreen = ({navigation}: any) => {
 
     try {
       const data = await signup(formValues);
-      setAuthenticatedUser(data.user);
+      console.log(data);
       navigation.navigate('LoginPage');
     } catch (error) {
       console.log(error);
@@ -50,6 +49,11 @@ const SignScreen = ({navigation}: any) => {
                   value={values.name}
                   placeholder="Name"
                   onType={handleChange('name')}
+                />
+                <Input
+                  value={values.role}
+                  placeholder="Role"
+                  onType={handleChange('role')}
                 />
                 <Input
                   value={values.surname}

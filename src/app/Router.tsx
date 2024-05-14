@@ -4,13 +4,16 @@ import React from 'react';
 import StackNavigator from '../navigation/StackNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {AuthProvider} from '../contexts/AuthContext';
+import {AxiosProvider} from '../contexts/AxiosContext';
 
 const Router = () => {
   return (
     <AuthProvider>
-      <NavigationContainer>
-        <StackNavigator />
-      </NavigationContainer>
+      <AxiosProvider>
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
+      </AxiosProvider>
     </AuthProvider>
   );
 };
